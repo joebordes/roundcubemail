@@ -51,6 +51,7 @@ class thunderbird_labels extends rcube_plugin
 			'LABEL3' => '$Label3',
 			'LABEL4' => '$Label4',
 			'LABEL5' => '$Label5',
+			'LABEL6' => '$Label6',
 			);
 			$this->message_tb_labels = array();
 			
@@ -102,7 +103,8 @@ class thunderbird_labels extends rcube_plugin
 				2 => $this->getText('label2'),
 				3 => $this->getText('label3'),
 				4 => $this->getText('label4'),
-				5 => $this->getText('label5')
+				5 => $this->getText('label5'),
+				6 => $this->getText('label6'),
 			));
 		}
 		// pass label strings to JS
@@ -183,7 +185,7 @@ class thunderbird_labels extends rcube_plugin
 			&& $this->rc->config->get('tb_label_modify_labels'))
 		{
 			$old = $this->rc->config->get($key);
-			for($i=1; $i<=5; $i++)
+			for($i=1; $i<=6; $i++)
 			{
 				$input = new html_inputfield(array(
 					'name' => $key.$i,
@@ -230,7 +232,8 @@ class thunderbird_labels extends rcube_plugin
 			2 => rcube_utils::get_input_value('tb_label_custom_labels2', rcube_utils::INPUT_POST),
 			3 => rcube_utils::get_input_value('tb_label_custom_labels3', rcube_utils::INPUT_POST),
 			4 => rcube_utils::get_input_value('tb_label_custom_labels4', rcube_utils::INPUT_POST),
-			5 => rcube_utils::get_input_value('tb_label_custom_labels5', rcube_utils::INPUT_POST)
+			5 => rcube_utils::get_input_value('tb_label_custom_labels5', rcube_utils::INPUT_POST),
+			6 => rcube_utils::get_input_value('tb_label_custom_labels6', rcube_utils::INPUT_POST)
 			);
 		}
 	
@@ -242,7 +245,7 @@ class thunderbird_labels extends rcube_plugin
 		#$this->api->output->add_label('copymessage.copyingmessage');
 
 		$li = html::tag('li',
-		  array('class' => 'submenu'),
+		  array('class' => 'submenu tb_submenu'),
 		  '<span>'.rcube::Q($this->gettext('tb_label_contextmenu_title')).'</span>' . $this->_gen_label_submenu($args, 'tb_label_ctxm_submenu'));
 		$out .= html::tag('ul', array('id' => 'tb_label_ctxm_mainmenu'), $li);
 		$this->api->output->add_footer(html::div(array('style' => 'display: none;'), $out));
@@ -252,7 +255,7 @@ class thunderbird_labels extends rcube_plugin
 	{
 		$out = '';
 		$custom_labels = $this->rc->config->get('tb_label_custom_labels');
-		for ($i = 0; $i < 6; $i++)
+		for ($i = 0; $i < 7; $i++)
 		{
 			$separator = ($i == 0)? ' separator_below' :'';
 			$out .= '<li class="label'.$i.$separator.
@@ -367,7 +370,7 @@ class thunderbird_labels extends rcube_plugin
 	  $custom_labels = $this->rc->config->get('tb_label_custom_labels');
 		$out = '<div id="tb_label_popup" class="popupmenu">
 			<ul class="toolbarmenu">';
-		for ($i = 0; $i < 6; $i++)
+		for ($i = 0; $i < 7; $i++)
 		{
 			$separator = ($i == 0)? ' separator_below' :'';
 			$out .= '<li class="label'.$i.$separator.'"><a href="#" class="active">'.$i.' '.$custom_labels[$i].'</a></li>';

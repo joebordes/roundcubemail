@@ -16,6 +16,15 @@
   margin: 0px 5px 0px 5px;
 }
 
+.ctxm_tb_label {
+  padding: 6px;
+}
+
+.tb_submenu {
+  background: url("thunderbird_16.png") no-repeat 4px center transparent;
+  padding-left: 15px;
+}
+
 #tb_label_popup
 {
   width: auto;
@@ -52,6 +61,11 @@ table.label4
 table.label5
 {
   background-color: #C9C;
+}
+
+table.label6
+{
+  background-color: #9999ff;
 }
 
 /* Support for Thunderbird label: definition of the 5 label color */
@@ -117,6 +131,20 @@ span.label5,
   color: #B6F;
 }
 
+#messagelist tr.label6 td,
+#messagelist tr.label6 td a,
+span.label6,
+.records-table tr.selected td span.label6
+{
+  color: #9999ff !important;
+}
+
+.toolbarmenu li.label6,
+.toolbarmenu li.label6 a.active
+{
+  color: #9999ff;
+}
+
 /* Selected messages */
 #messagelist tr.selected.label1 td,
 #messagelist tr.selected.label1 td a
@@ -151,6 +179,13 @@ span.label5,
 {
   color: #FFFFFF;
   background-color: #993399;
+}
+
+#messagelist tr.selected.label6 td,
+#messagelist tr.selected.label6 td a
+{
+  color: #FFFFFF;
+  background-color: #9999ff;
 }
 
 span.tb_label_dots {

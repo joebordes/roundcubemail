@@ -13,6 +13,7 @@ $labels['label2'] = 'Work';
 $labels['label3'] = 'Personal';
 $labels['label4'] = 'To do';
 $labels['label5'] = 'Later';
+$labels['label6'] = 'coreBOS';
 
 $labels['tb_label_options'] = 'Thunderbird Labels Options';
 $labels['tb_label_enable_option'] = 'Enable labels';

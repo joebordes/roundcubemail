@@ -181,7 +181,7 @@ function rcm_tb_label_get_selection()
 
 function rcm_tb_label_create_popupmenu()
 {
-	for (i = 0; i < 6; i++)
+	for (i = 0; i < 7; i++)
 	{
 		var cur_a = $('li.label' + i +' a');
 		
@@ -197,7 +197,7 @@ function rcm_tb_label_create_popupmenu()
 
 function rcm_tb_label_init_onclick()
 {
-	for (i = 0; i < 6; i++)
+	for (i = 0; i < 7; i++)
 	{
 	  // find the "HTML a tags" of tb-label submenus
 		var cur_a = $('#tb_label_popup li.label' + i +' a');
@@ -219,7 +219,7 @@ function rcm_tb_label_init_onclick()
 				if (toggle_label_no == 0)
 				{
 					from = 1;
-					to = 6;
+					to = 7;
 					unset_all = true;
 				}
 				for (i = from; i < to; i++)
